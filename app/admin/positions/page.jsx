@@ -9,22 +9,11 @@ import { Plus, Edit, Trash2, Eye } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { showToast } from '@/components/ui/toast'
 
-type Position = {
-  id: string
-  title: string
-  department: string
-  type: string
-  location: string
-  status: 'draft' | 'published' | 'archived'
-  createdAt: string
-  applicants: number
-}
-
-export default function PositionsPage() {
+ const PositionsPage = () => {
   const router = useRouter()
-  const [positions, setPositions] = useState<Position[]>([])
+  const [positions, setPositions] = useState([])
   const [loading, setLoading] = useState(true)
-  const [deletingId, setDeletingId] = useState<string | null>(null)
+  const [deletingId, setDeletingId] = useState(null)
 
   useEffect(() => {
     const fetchPositions = async () => {
@@ -44,7 +33,7 @@ export default function PositionsPage() {
     fetchPositions()
   }, [])
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id) => {
     setDeletingId(id)
     try {
       const response = await fetch(`/api/positions/${id}`, {
@@ -63,7 +52,7 @@ export default function PositionsPage() {
     }
   }
 
-  const getStatusBadge = (status: string) => {
+  const getStatusBadge = (status) => {
     switch (status) {
       case 'published':
         return <Badge variant="default">Published</Badge>
@@ -121,7 +110,7 @@ export default function PositionsPage() {
           </TableHeader>
           <TableBody>
             {positions.length > 0 ? (
-              positions.map((position) => (
+              positions.map(position => (
                 <TableRow key={position.id}>
                   <TableCell className="font-medium">{position.title}</TableCell>
                   <TableCell>{position.department}</TableCell>
@@ -175,3 +164,5 @@ export default function PositionsPage() {
     </Card>
   )
 }
+
+export default PositionsPage;

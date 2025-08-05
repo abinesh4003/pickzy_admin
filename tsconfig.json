@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/positions/[id]/route.js", "app/admin/positions/[id]/page.jsx", "app/admin/positions/[id]/edit/page.jsx", "app/admin/positions/new/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/positions/[id]/route.js", "app/admin/positions/[id]/page.jsx", "app/admin/positions/[id]/edit/page.jsx", "app/admin/positions/new/page.jsx", "app/admin/positions/page.jsx", "app/admin/page.jsx", "components/admin/AdminStatsCard.jsx"],
   "exclude": ["node_modules"]
 }

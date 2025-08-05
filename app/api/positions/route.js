@@ -8,17 +8,7 @@ export async function GET() {
 
     const positions = await db.collection('positions')
       .find({})
-      .sort({ createdAt: -1 }) // Newest first
-      .project({
-        title: 1,
-        department: 1,
-        type: 1,
-        location: 1,
-        status: 1,
-        applicants: 1,
-        createdAt: 1,
-        _id: 1
-      })
+      .sort({ createdAt: -1 }) 
       .toArray();
 
     // Convert MongoDB _id to string for serialization

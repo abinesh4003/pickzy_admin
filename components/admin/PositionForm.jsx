@@ -79,7 +79,7 @@ export function PositionForm({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Job Title */}
             <div>
-              <Label htmlFor="title">Job Title *</Label>
+              <Label className="mb-2" htmlFor="title">Job Title *</Label>
               <Input
                 id="title"
                 name="title"
@@ -91,7 +91,7 @@ export function PositionForm({
 
             {/* Department */}
             <div>
-              <Label htmlFor="department">Department *</Label>
+              <Label className="mb-2" htmlFor="department">Department *</Label>
               <Select
                 value={formData.department}
                 onValueChange={(value) => handleSelectChange('department', value)}
@@ -112,7 +112,7 @@ export function PositionForm({
 
             {/* Employment Type */}
             <div>
-              <Label htmlFor="type">Employment Type *</Label>
+              <Label className="mb-2" htmlFor="type">Employment Type *</Label>
               <Select
                 value={formData.type}
                 onValueChange={(value) => handleSelectChange('type', value)}
@@ -133,7 +133,7 @@ export function PositionForm({
 
             {/* Experience Level */}
             <div>
-              <Label htmlFor="experience">Experience Level *</Label>
+              <Label className="mb-2" htmlFor="experience">Experience Level *</Label>
               <Select
                 value={formData.experience}
                 onValueChange={(value) => handleSelectChange('experience', value)}
@@ -154,7 +154,7 @@ export function PositionForm({
 
             {/* Location */}
             <div>
-              <Label htmlFor="location">Location *</Label>
+              <Label className="mb-2" htmlFor="location">Location *</Label>
               <Input
                 id="location"
                 name="location"
@@ -166,7 +166,7 @@ export function PositionForm({
 
             {/* Salary */}
             <div>
-              <Label htmlFor="salary">Salary Range *</Label>
+              <Label className="mb-2" htmlFor="salary">Salary Range *</Label>
               <Input
                 id="salary"
                 name="salary"
@@ -179,7 +179,7 @@ export function PositionForm({
             {/* Status (Edit only) */}
             {formType === 'edit' && (
               <div>
-                <Label htmlFor="status">Status</Label>
+                <Label className="mb-2" htmlFor="status">Status</Label>
                 <Select
                   value={formData.status}
                   onValueChange={(value) => handleSelectChange('status', value)}
@@ -201,7 +201,7 @@ export function PositionForm({
             {/* Applicants (Edit only) */}
             {formType === 'edit' && (
               <div>
-                <Label htmlFor="applicants">Applicants</Label>
+                <Label className="mb-2" htmlFor="applicants">Applicants</Label>
                 <Input
                   id="applicants"
                   name="applicants"
@@ -216,7 +216,7 @@ export function PositionForm({
             {/* Views (Edit only) */}
             {formType === 'edit' && (
               <div>
-                <Label htmlFor="views">Views</Label>
+                <Label className="mb-2" htmlFor="views">Views</Label>
                 <Input
                   id="views"
                   name="views"
@@ -249,7 +249,7 @@ export function PositionForm({
         {/* Description Tab */}
         <TabsContent value="description" className="space-y-6">
           <div>
-            <Label htmlFor="description">Job Description *</Label>
+            <Label className="mb-2" htmlFor="description">Job Description *</Label>
             <Textarea
               id="description"
               name="description"
@@ -261,7 +261,7 @@ export function PositionForm({
           </div>
 
           <div>
-            <Label htmlFor="responsibilities">Key Responsibilities</Label>
+            <Label className="mb-2" htmlFor="responsibilities">Key Responsibilities</Label>
             <Textarea
               id="responsibilities"
               name="responsibilities"
@@ -272,7 +272,7 @@ export function PositionForm({
           </div>
 
           <div>
-            <Label htmlFor="benefits">Benefits & Perks</Label>
+            <Label className="mb-2" htmlFor="benefits">Benefits & Perks</Label>
             <Textarea
               id="benefits"
               name="benefits"
@@ -302,7 +302,7 @@ export function PositionForm({
         {/* Requirements Tab */}
         <TabsContent value="requirements" className="space-y-6">
           <div>
-            <Label>Requirements *</Label>
+            <Label className="mb-2">Requirements *</Label>
             <div className="flex gap-2 mb-2">
               <Input
                 value={newRequirement}
