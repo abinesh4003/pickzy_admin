@@ -170,7 +170,7 @@ export default function AdminDashboard() {
                       className="h-8 w-8 p-0"
                       asChild
                     >
-                      <Link href={`/admin/positions/${position._id}`}>
+                      <Link href={`/admin/positions/${position.id}`}>
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                     </Button>
