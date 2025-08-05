@@ -5,10 +5,10 @@ import { Home, Briefcase, User, LogIn } from 'lucide-react'
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <h1 className="text-4xl font-bold tracking-tight">
-          Welcome to <span className="text-primary">RecruitPro</span>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
+      <div className="z-10 w-full max-w-5xl items-center justify-center font-mono text-sm lg:flex ">
+        <h1 className="text-4xl font-bold tracking-tight " >
+          Welcome to <span className="text-primary ">RecruitPro</span>
         </h1>
       </div>
 
@@ -18,7 +18,7 @@ export default function HomePage() {
             <div className="bg-secondary p-3 rounded-full w-fit mb-4">
               <Briefcase className="h-6 w-6 text-primary" />
             </div>
-            <CardTitle>For Employers</CardTitle>
+            <CardTitle>Manage Your Jobs</CardTitle>
             <CardDescription>
               Find the best talent for your organization
             </CardDescription>
@@ -26,7 +26,7 @@ export default function HomePage() {
           <CardContent>
             <Button asChild variant="outline" className="w-full">
               <Link href="/admin">
-                Employer Dashboard
+                Admin Dashboard
                 <LogIn className="ml-2 h-4 w-4" />
               </Link>
             </Button>
