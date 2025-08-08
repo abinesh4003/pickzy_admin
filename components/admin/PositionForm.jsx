@@ -253,7 +253,7 @@ export function PositionForm({
             <Textarea
               id="description"
               name="description"
-              value={formData.description}
+              value={formData.description}  
               onChange={handleInputChange}
               rows={8}
               required

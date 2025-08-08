@@ -54,14 +54,14 @@ import { showToast } from '@/components/ui/toast'
 
   const getStatusBadge = (status) => {
     switch (status) {
-      case 'published':
-        return <Badge variant="default">Published</Badge>
+      case 'active':
+        return <Badge className='text-white bg-green-700'>{status}</Badge>
       case 'draft':
-        return <Badge variant="secondary">Draft</Badge>
-      case 'archived':
-        return <Badge variant="destructive">Archived</Badge>
+        return <Badge className='text-white bg-yellow-700 '>{status}</Badge>
+      case 'closed':
+        return <Badge className='text-white bg-red-700'>{status}</Badge>
       default:
-        return <Badge>{status}</Badge>
+        return <Badge className='text-white bg-gray-700'>{status}</Badge>
     }
   }
 

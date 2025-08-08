@@ -59,6 +59,20 @@ export default function AdminDashboard() {
     )
   }
 
+  const getStatusBadge = (status) => {
+    switch (status) {
+      case 'active':
+        return <Badge className='text-white bg-green-700'>{status}</Badge>
+      case 'draft':
+        return <Badge className='text-white bg-yellow-700 '>{status}</Badge>
+      case 'closed':
+        return <Badge className='text-white bg-red-700'>{status}</Badge>
+      default:
+        return <Badge className='text-white bg-gray-700'>{status}</Badge>
+    }
+  }
+
+
   return (
     <div className="space-y-6">
       {/* Key Metrics */}
@@ -66,12 +80,12 @@ export default function AdminDashboard() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">
-              Active Positions
+             Total Positions
             </CardTitle>
             <Briefcase className="h-5 w-5 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{metrics?.activePositions || 0}</div>
+            <div className="text-2xl font-bold">{positions.length || 0}</div>
             <p className="text-xs text-muted-foreground mt-1">
               {metrics?.positionsAddedThisMonth || 0} added this month
             </p>
@@ -161,9 +175,7 @@ export default function AdminDashboard() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Badge variant={position.status === 'active' ? 'default' : 'secondary'}>
-                      {position.status}
-                    </Badge>
+                    {getStatusBadge(position.status)}
                     <Button 
                       variant="ghost" 
                       size="sm" 

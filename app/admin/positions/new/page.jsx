@@ -19,7 +19,7 @@ export default function NewPositionPage() {
     location: '',
     salary: '',
     experience: '',
-    posted: 'Just now',
+    posted: '',
     description: '',
     responsibilities: '',
     benefits: '',
