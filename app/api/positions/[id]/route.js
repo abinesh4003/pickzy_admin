@@ -9,7 +9,7 @@ export async function GET(request, context) {
     const client = await clientPromise;
     const db = client.db();
 
-    const position = await db.collection('positions').findOne({
+    const position = await db.collection('careers').findOne({
       _id: new ObjectId(id)
     });
 
@@ -41,7 +41,7 @@ export async function PUT(request, context) {
     const db = client.db();
     const updateData = await request.json();
 
-    const result = await db.collection('positions').updateOne(
+    const result = await db.collection('careers').updateOne(
       { _id: new ObjectId(id) },
       { $set: { ...updateData, updatedAt: new Date() } }
     );
@@ -71,7 +71,7 @@ export async function DELETE(request, context) {
     const client = await clientPromise;
     const db = client.db();
 
-    const result = await db.collection('positions').deleteOne({
+    const result = await db.collection('careers').deleteOne({
       _id: new ObjectId(id)
     });
 

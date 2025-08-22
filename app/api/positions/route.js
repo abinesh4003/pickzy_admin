@@ -6,7 +6,7 @@ export async function GET() {
     const client = await clientPromise;
     const db = client.db();
 
-    const positions = await db.collection('positions')
+    const positions = await db.collection('careers')
       .find({})
       .sort({ createdAt: -1 }) 
       .toArray();
@@ -43,7 +43,7 @@ export async function POST(request) {
       status: positionData.status || 'active' // Default to draft if not specified
     };
 
-    const result = await db.collection('positions').insertOne(positionWithTimestamp);
+    const result = await db.collection('careers').insertOne(positionWithTimestamp);
 
     return NextResponse.json(
       { 
